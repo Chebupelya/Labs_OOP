@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 
-
 namespace OOP
 {
 
@@ -13,7 +12,6 @@ namespace OOP
 
 #if Primitive_Types
             bool Bool = true;
-
             byte Byte = 255;
             sbyte SByte = 127;
 
@@ -101,16 +99,16 @@ namespace OOP
 #endif
 
 #if Var_2
-            //var IntVal = 1;
-            //IntVal = 3.4f; присвоение переменной типа int значения типа float невозможно из-за статической типизации языка
+            var IntVal = 1;
+            IntVal = 3.4f; //присвоение переменной типа int значения типа float невозможно из-за статической типизации языка
             //компилятор лишь выбирает наиболее подходящий тип в момент инициализации
 #endif
 
             //Exercise 2///////////////////////////////////////////////////////////////////////////////////////////////////
 
 #if Compare_Initialization_STR
-            string str1 = "A";
-            string str2 = "B";
+            string str1 = "greeting";
+            string str2 = "world";
 
             int result = string.Compare(str1, str2); //сравнение по алфавиту
             if (result < 0)
@@ -186,7 +184,7 @@ namespace OOP
             StringBuilder result = new StringBuilder(" is groot");
             result.Insert(0, "Nikita");
             result.Remove(10, 5);
-            result.Append("debil");
+            result.Append("good");
 #endif
 
             //Exercise 3///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -225,7 +223,7 @@ namespace OOP
                 str_arr[position] = str;
 #endif
 
-#if Ex_3_c
+#if Ex_3_c_d
             int[][] SArray = new int[3][];
             SArray[0] = new int[2];
             SArray[1] = new int[3];
@@ -247,8 +245,8 @@ namespace OOP
 
             //Exercise 4///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#if !Ex_4_a
-            (int, string, char, string, ulong) Cortege = (18, "Данила", 'Д', "Козляковский", 2281337);
+#if Ex_4_a
+            (int, string, char, string, ulong) Cortege = (18, "Никита", 'Н', "Ильин", 2281337);
 
             Console.WriteLine(Cortege);
 
@@ -259,11 +257,14 @@ namespace OOP
 
             var First = (a: 10, b: "20");
             var Second = (a: 10, b: "20");
+            var aa = First.Item1;
             
             bool result = First != Second;
 
             var p = ("John", "Quincy", "Adams", "Boston");
-            var (fName, _, city, _) = p;
+            var (fName, _, _, city) = p;
+            Console.WriteLine(fName + ' ' + city);
+
 #endif
 
             //Exercise 5///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,7 +329,7 @@ namespace OOP
 
             //Exercise 6///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#if !Ex_6
+#if Ex_6
             void FirstFunc()
             {
                 try
